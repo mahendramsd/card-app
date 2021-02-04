@@ -2,7 +2,7 @@
 Angular State Mangement solution implementaion - Credit card oparation 
 
 # Login Details
-usernmae : admin
+username : admin
 
 password : admin
 
