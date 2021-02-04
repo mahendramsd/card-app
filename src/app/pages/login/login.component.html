@@ -1,0 +1,34 @@
+<body style="background-color:blueviolet">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 mt-5">
+            <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()" role="form">
+                <h5 class="text-center text-white mb-2">Welcome!</h5>
+                <p class="text-center text-white mb-5">Enter your username to sign in to your account</p>
+                <div class="form-group">
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-user" aria-hidden="true"></i></span>
+                        </div>
+                        <input type="text" [ngClass]="{ 'input-error-validate': submitted ||(loginForm.controls.username.touched && loginForm.controls.username.errors?.required)  }" formControlName="username" name="username" class="form-control" aria-label="Small" placeholder="Username" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group input-group-sm mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-lock" aria-hidden="true"></i></span>
+                        </div>
+                        <input type="password" [ngClass]="{ 'input-error-validate': submitted ||(loginForm.controls.password.touched && loginForm.controls.password.errors?.required)  }" formControlName="password" name="password" class="form-control" aria-label="Small" placeholder="Password" aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                </div>
+                <div style="margin-top: 20%">
+                    <button type="submit" class="btn btn-sm btn-lg btn-block">Next</button>
+                </div>
+            </form>
+
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+</body>

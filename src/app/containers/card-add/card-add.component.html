@@ -1,0 +1,94 @@
+<main>
+    <div class="card card-danger">
+
+        <div class="card-header">
+            <h3 class="card-title">Add Credit Card Details</h3>
+
+            <button type="button" class="close" data-dismiss="modal" (click)="activeModal.close('Close click')"
+                aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 mt-2">
+                <form class="s2" [formGroup]="PaymentForm" (ngSubmit)="paymentSubmit()" role="form">
+                    <h2 class="text-center text-dark mb-2">Welcome Customer</h2>
+                    <p class="text-center text-dark h6 mb-5">Enter your payment details to complete your transaction</p>
+                    <div class="form-group">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-credit-card"
+                                        aria-hidden="true"></i></span>
+                            </div>
+                            <input type="number" formControlName="cardNumber" name="cardNumber" class="form-control"
+                                aria-label="Small" placeholder="Card Number" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                        <span
+                            *ngIf="submitted ||(PaymentForm.controls.cardNumber.touched && PaymentForm.controls.cardNumber.errors?.required)"
+                            class="input-error-validate small">*Enter Card Number</span>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-user"
+                                        aria-hidden="true"></i></span>
+                            </div>
+                            <input type="text" formControlName="cardHolder" name="cardHolder" class="form-control"
+                                aria-label="Small" placeholder="Card Holder Name"
+                                aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                        <span
+                            *ngIf="submitted ||(PaymentForm.controls.cardHolder.touched && PaymentForm.controls.cardHolder.errors?.required)"
+                            class="input-error-validate small">*Enter Card Holder Name</span>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span (click)="d.toggle()" class="input-group-text"><i
+                                        class="fa fa-calendar"></i></span>
+                            </div>
+                            <input type="text" [(ngModel)]="expireDate" formControlName="expireDate" name="dp"
+                                class="form-control" aria-label="Small" placeholder="yyyy-mm-dd" ngbDatepicker
+                                #d="ngbDatepicker" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                        <span
+                            *ngIf="submitted ||(PaymentForm.controls.expireDate.touched && PaymentForm.controls.expireDate.errors?.required)"
+                            class="input-error-validate small">*Enter Expire Date</span>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-lock"
+                                        aria-hidden="true"></i></span>
+                            </div>
+                            <input type="text" formControlName="securityCode" maxlength="3" name="securityCode" class="form-control"
+                                aria-label="Small" placeholder="Security Code" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-money"
+                                        aria-hidden="true"></i></span>
+                            </div>
+                            <input type="number" formControlName="amount"  name="amount" class="form-control"
+                                aria-label="Small" placeholder="Amount" aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                        <span
+                            *ngIf="submitted ||(PaymentForm.controls.amount.touched && PaymentForm.controls.amount.errors?.required) "
+                            class="input-error-validate small">*Enter Amount</span>
+                    </div>
+                    <div style="margin-top: 10%">
+                        <button type="submit"
+                            class="btn btn-sm btn-lg btn-block btn-success font-weight-bold text-dark">Add Card</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</main>

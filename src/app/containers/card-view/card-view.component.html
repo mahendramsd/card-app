@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="mt-5 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <p class="h2">Credit Card History</p>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <button (click) = "addCard()" type="button" class="pull-right btn btn-sm btn-warning font-weight-bold text-dark">Add Card</button>
+                </div>
+            </div>
+            <div class="mt-5 card">
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                
+                            <th>Card Number</th>
+                            <th>Card Holder Name</th>
+                            <th>Expire Date</th>
+                            <th>Security Code</th>
+                            <th>Amount</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let paymnet of paymnets$ | async; let i=index">
+
+                            <td>{{paymnet.cardNumber}}</td>
+                            <td>{{paymnet.cardHolder}}</td>
+                            <td>{{paymnet.expireDate}}</td>
+                            <td>{{paymnet.securityCode}}</td>
+                            <td>{{paymnet.amount | number : '1.2-2'}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

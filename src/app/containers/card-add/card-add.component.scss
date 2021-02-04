@@ -1,0 +1,36 @@
+.input-error-validate{
+  color: #a80022;
+}
+
+.s1{
+  background-color:#0c5460;
+  height: 900px
+}
+.s2{
+  margin-top: 20%
+}
+
+.s3{
+  margin-top: 10%
+}
+
+.card {
+  box-shadow: 0 0 1px rgb(0 0 0 / 13%), 0 1px 3px rgb(0 0 0 / 20%);
+  margin-bottom: 1rem;
+}
+
+.card-header:first-child {
+  border-radius: .25rem .25rem 0 0;
+}
+.card-header {
+  background-color: transparent;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+  padding: .75rem 1.25rem;
+  position: relative;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+}
+
+.card-danger:not(.card-outline)>.card-header {
+  background-color: #39C0ED;
+}
